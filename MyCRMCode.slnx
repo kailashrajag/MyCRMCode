@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/ClientScripts/">
+    <File Path="AccountScripts.js" />
+    <File Path="ContactScript1.js" />
+    <File Path="GlobalHelper.js" />
+    <File Path="MyHTML.html" />
+  </Folder>
+  <Project Path="ConsoleApp1/ConsoleApp1.csproj" Id="5634e326-effd-4734-864c-19397e0ab5ea" />
+  <Project Path="MyPlugins/MyPlugins.csproj" Id="39fb9b16-a5d6-4091-97e6-e3a395663681" />
+</Solution>

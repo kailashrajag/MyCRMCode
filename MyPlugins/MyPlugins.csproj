@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39FB9B16-A5D6-4091-97E6-E3A395663681}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyPlugins</RootNamespace>
+    <AssemblyName>MyPlugins</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>keystackly.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.60\lib\net462\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.60\lib\net462\Microsoft.Xrm.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Http, Version=4.10.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Http.4.10.3\lib\net461\System.ServiceModel.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Primitives, Version=4.10.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Primitives.4.10.3\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.5, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.5\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContextDepthRevenue.cs" />
+    <Compile Include="DuplicateCheck.cs" />
+    <Compile Include="DuplicateCheckLINQ.cs" />
+    <Compile Include="Entities\CrmServiceContext.cs" />
+    <Compile Include="Entities\Entities\Account.cs" />
+    <Compile Include="Entities\Entities\ActivityParty.cs" />
+    <Compile Include="Entities\Entities\ActivityPointer.cs" />
+    <Compile Include="Entities\Entities\BusinessProcess.cs" />
+    <Compile Include="Entities\Entities\BusinessUnit.cs" />
+    <Compile Include="Entities\Entities\Chat.cs" />
+    <Compile Include="Entities\Entities\Contact.cs" />
+    <Compile Include="Entities\Entities\CustomerAddress.cs" />
+    <Compile Include="Entities\Entities\Email.cs" />
+    <Compile Include="Entities\Entities\SystemUser.cs" />
+    <Compile Include="Entities\Entities\TeS_Case.cs" />
+    <Compile Include="Entities\Entities\TeS_ParaMfUp.cs" />
+    <Compile Include="Entities\Entities\TeS_Property.cs" />
+    <Compile Include="Entities\Entities\TransactionCurrency.cs" />
+    <Compile Include="Entities\EntityOptionSetEnum.cs" />
+    <Compile Include="Entities\Messages\Analyze.cs" />
+    <Compile Include="Entities\Messages\AnalyzeSentiment.cs" />
+    <Compile Include="HelloWorld.cs" />
+    <Compile Include="Impersonation.cs" />
+    <Compile Include="OptionSets\ActivityFileAttachment_ObjectCode.cs" />
+    <Compile Include="OptionSets\ActivityPointer_ActivityTypeCode.cs" />
+    <Compile Include="OptionSets\ActivityPointer_DeliveryPriorityCode.cs" />
+    <Compile Include="OptionSets\AIOperationOverrideType.cs" />
+    <Compile Include="OptionSets\AIPluginSubtype.cs" />
+    <Compile Include="OptionSets\AIPluginType.cs" />
+    <Compile Include="OptionSets\ApplicationAccess.cs" />
+    <Compile Include="OptionSets\ApplicationBasedAccessList_Cloud.cs" />
+    <Compile Include="OptionSets\BackEndToolType.cs" />
+    <Compile Include="OptionSets\BotComponentCollectionSharingRoleType.cs" />
+    <Compile Include="OptionSets\BotComponentReusePolicy.cs" />
+    <Compile Include="OptionSets\BotSharingRoleTypes.cs" />
+    <Compile Include="OptionSets\BulkEmail_Recipient.cs" />
+    <Compile Include="OptionSets\BulkEmail_Recipients.cs" />
+    <Compile Include="OptionSets\Capability.cs" />
+    <Compile Include="OptionSets\ChatBotLanguage.cs" />
+    <Compile Include="OptionSets\ComponentState.cs" />
+    <Compile Include="OptionSets\ComponentType.cs" />
+    <Compile Include="OptionSets\ConnectionRole_Category.cs" />
+    <Compile Include="OptionSets\ConnectorType.cs" />
+    <Compile Include="OptionSets\ConvertRule_ChannelActivity.cs" />
+    <Compile Include="OptionSets\CopilotExampleQuestionTKnowledgeType.cs" />
+    <Compile Include="OptionSets\CustomApiFieldType.cs" />
+    <Compile Include="OptionSets\Delete_RecurringAppointmentMaster.cs" />
+    <Compile Include="OptionSets\DependencyType.cs" />
+    <Compile Include="OptionSets\EmailServerProfile_AuthenticationProtocol.cs" />
+    <Compile Include="OptionSets\Field_Security_Permission_ReadUnmasked.cs" />
+    <Compile Include="OptionSets\Field_Security_Permission_Type.cs" />
+    <Compile Include="OptionSets\FlipSwitch_Options.cs" />
+    <Compile Include="OptionSets\FullSyncState.cs" />
+    <Compile Include="OptionSets\Goal_FiscalPeriod.cs" />
+    <Compile Include="OptionSets\Goal_FiscalYear.cs" />
+    <Compile Include="OptionSets\HttpMethod.cs" />
+    <Compile Include="OptionSets\IsInherited.cs" />
+    <Compile Include="OptionSets\KnowledgeArticle_ExpirationState.cs" />
+    <Compile Include="OptionSets\MainFewShotEntityType.cs" />
+    <Compile Include="OptionSets\MakerFewShotSqlCorrectness.cs" />
+    <Compile Include="OptionSets\Metric_GoalType.cs" />
+    <Compile Include="OptionSets\MobileOfflineEnabledEntities.cs" />
+    <Compile Include="OptionSets\MsDynCe_ContentState.cs" />
+    <Compile Include="OptionSets\Msdyn_AIModelTaskType.cs" />
+    <Compile Include="OptionSets\Msdyn_DataflowTemplateState.cs" />
+    <Compile Include="OptionSets\Msdyn_Flow_ApprovalResponseOptionsType.cs" />
+    <Compile Include="OptionSets\Msdyn_Flow_ApprovalStage.cs" />
+    <Compile Include="OptionSets\Msdyn_Flow_Approval_Priority.cs" />
+    <Compile Include="OptionSets\Msdyn_Flow_Approval_RequestType.cs" />
+    <Compile Include="OptionSets\Msdyn_NumberOfSearchResults.cs" />
+    <Compile Include="OptionSets\MsFt_DataState.cs" />
+    <Compile Include="OptionSets\MsPp_ColumnPermissionValues.cs" />
+    <Compile Include="OptionSets\OfficeDocument_DocumentType.cs" />
+    <Compile Include="OptionSets\OnlineMeetingType.cs" />
+    <Compile Include="OptionSets\OpenAIsChemAversion.cs" />
+    <Compile Include="OptionSets\OptionSet_RunReport.cs" />
+    <Compile Include="OptionSets\Organization_ApplicationBasedAccessControlMode.cs" />
+    <Compile Include="OptionSets\Organization_SameSiteModeForSessionCookie.cs" />
+    <Compile Include="OptionSets\OrgInsightsConfiguration_LookBack.cs" />
+    <Compile Include="OptionSets\OrgInsightsConfiguration_PlotOption.cs" />
+    <Compile Include="OptionSets\Photo_Resolution.cs" />
+    <Compile Include="OptionSets\PowerBiMashupParameterValueSource.cs" />
+    <Compile Include="OptionSets\PowerPageComponentType.cs" />
+    <Compile Include="OptionSets\PowerPageLanguages.cs" />
+    <Compile Include="OptionSets\PowerPageSiteType.cs" />
+    <Compile Include="OptionSets\PowerPagesSourceFileType.cs" />
+    <Compile Include="OptionSets\PrincipalSyncAttributeMapping_SyncDirection.cs" />
+    <Compile Include="OptionSets\Processstage_Category.cs" />
+    <Compile Include="OptionSets\RangeEnds_Options.cs" />
+    <Compile Include="OptionSets\RecurrenceRule_MonthOfYear.cs" />
+    <Compile Include="OptionSets\RegistrationStatusType.cs" />
+    <Compile Include="OptionSets\RepeatPattern_Options.cs" />
+    <Compile Include="OptionSets\RestApiAuthType.cs" />
+    <Compile Include="OptionSets\RunDesktopFlowConnectionType.cs" />
+    <Compile Include="OptionSets\SameWeekday_Options.cs" />
+    <Compile Include="OptionSets\SameWeekWeek_Options.cs" />
+    <Compile Include="OptionSets\SearchEntity.cs" />
+    <Compile Include="OptionSets\SecurityRole_IsAutoAssigned.cs" />
+    <Compile Include="OptionSets\ServerType.cs" />
+    <Compile Include="OptionSets\SharePointDocumentLocation_LocationType.cs" />
+    <Compile Include="OptionSets\SharePointSite_ServiceType.cs" />
+    <Compile Include="OptionSets\SharePoint_ValidationStatus.cs" />
+    <Compile Include="OptionSets\SharePoint_ValidationStatusReason.cs" />
+    <Compile Include="OptionSets\SocialActivity_PostMessageType.cs" />
+    <Compile Include="OptionSets\SocialProfile_Community.cs" />
+    <Compile Include="OptionSets\SynapseLinkDestinationSyncState.cs" />
+    <Compile Include="OptionSets\SynapseLinkEntityMetadataState.cs" />
+    <Compile Include="OptionSets\SynapseLinkEntityPartitionStrategy.cs" />
+    <Compile Include="OptionSets\SynapseLinkEntitySource.cs" />
+    <Compile Include="OptionSets\SynapseLinkEntitySyncState.cs" />
+    <Compile Include="OptionSets\SynapseLinkExternalTableState.cs" />
+    <Compile Include="OptionSets\SynapseLinkProfileEntityType.cs" />
+    <Compile Include="OptionSets\SynapseLinkProfileState.cs" />
+    <Compile Include="OptionSets\SynapseLinkProfileType.cs" />
+    <Compile Include="OptionSets\SynapseLinkScheduleRecurrenceUnit.cs" />
+    <Compile Include="OptionSets\SynapseLinkScheduleType.cs" />
+    <Compile Include="OptionSets\SynapseLinkSynapseTableCreationState.cs" />
+    <Compile Include="OptionSets\SyncAttributeMapping_SyncDirection.cs" />
+    <Compile Include="OptionSets\SyncStatus.cs" />
+    <Compile Include="OptionSets\WorkflowLog_ObjectTypeCode.cs" />
+    <Compile Include="OptionSets\Workflow_RunAs.cs" />
+    <Compile Include="OptionSets\Workflow_Stage.cs" />
+    <Compile Include="OptionSets\YearlyMonth_Options.cs" />
+    <Compile Include="PreEntityImageDemo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskCreate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="keystackly.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

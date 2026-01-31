@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function Buttonclick() {
+            // Accessing from elements from HTML web resource
+            // We have to follow old code "Xrm.Page" not new "formContext"
+            var accountName = parent.Xrm.Page.getAttribute("name").getValue();
+
+            parent.Xrm.WebApi.retrieveMultipleRecords("contact", "?$select=firstname,lastname&$filter=address1_city eq 'Paris'", 5000).then( //singular "contact"
+                function success(result) {
+                    var text = "";
+                    for (var i = 0; i < result.entities.length; i++) {
+                        console.log(result.entities[i]);
+                        text += result.entities[i].firstname;
+                    }
+                    // perform additional operations on retrieved records
+                    //using DOM document object model
+                    document.getElementById("text").innerHTML = text;
+                },
+                function (error) {
+                    console.log(error.message);
+                    // handle error conditions
+                }
+            );
+        }
+    </script>
+    
+</head>
+<body>
+    <input type="button" value="click me" onclick="Buttonclick()"/>
+    <p id="text">
+
+    </p>
+
+</body>
+</html>
